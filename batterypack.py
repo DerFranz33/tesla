@@ -1,6 +1,7 @@
 class Batterypack:
-    def __init__(self, kwh) :
+    def __init__(self, kwh, status=25) :
         self.kwh = kwh
+        self.__status = status
     
 
     @property
@@ -14,3 +15,10 @@ class Batterypack:
         else:
             self.__kwh = 70
             print('kwh set to {} due to lack of correct input'.format(self.__kwh))
+
+    @property
+    def status(self):
+        return self.__status
+    @status.setter
+    def status(self, argument):
+        print('Not allowed to alter battery. Battery status remains {}'.format(self.kwh))

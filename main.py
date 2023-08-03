@@ -20,10 +20,15 @@ def tests_tesla():
     assert(t.mileage == 1000)
 
 def tests_batterypack():
+    # kwh
     b = Batterypack(20)
     assert(b.kwh == 70)
     b.kwh = 85
     assert(b.kwh == 85)
+    # status
+    assert(b.status == 25)
+    b.status = 40
+    assert(b.status == 25)
     
 
 tests_tesla()
