@@ -1,4 +1,5 @@
 from tesla import Tesla
+from batterypack import Batterypack
 
 def tests_tesla():
     t = Tesla('y', 'kebab')
@@ -18,4 +19,12 @@ def tests_tesla():
     t.mileage = 1000
     assert(t.mileage == 1000)
 
+def tests_batterypack():
+    b = Batterypack(20)
+    assert(b.kwh == 70)
+    b.kwh = 85
+    assert(b.kwh == 85)
+    
+
 tests_tesla()
+tests_batterypack()
