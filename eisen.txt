@@ -1,0 +1,26 @@
+KLASSE: Tesla
+    ATTRIBUTEN:
+        type
+        color
+        mileage
+        panel
+        batterypack
+    DEFs:
+        __init__ --> chance = len(colour)*0.001 --> use change as percentage to determain how often a car gets broken initted
+        drive(miles)
+        charge()
+        nees_charge()
+        can_drive()
+        range()
+        implement __str__
+        use getters and setters
+
+KLASSE: batterypack
+    ATTRIBUTEN:
+        kwh
+        status
+        n_charged
+    DEFs:
+        charge()
+        juice(kwh)
+        use getters and setters
