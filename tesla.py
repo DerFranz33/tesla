@@ -1,7 +1,10 @@
 class Tesla:
-    def __init__(self, type):
+    def __init__(self, type, colour):
         self.__type = 3
         self.type = type
+        self.__colour = 'Solid Black'
+        self.colour = colour
+        self.__mileage = 0
         
 
     @property
@@ -14,3 +17,22 @@ class Tesla:
             self.__type = argument
         else:
             print('Tesla model 3 created (due to false input)')
+    
+    @property
+    def colour(self):
+        return self.__colour
+    @colour.setter
+    def colour(self, argument):
+        CONSTRAIN_COLOUR = ['Deep Blue', 'Midnight Silver', 'Pearl White', 'Red', 'Solid Black']
+        if(argument in CONSTRAIN_COLOUR):
+            self.__colour = argument
+        else:
+            print('Tesla colour Solid Black sprayed (due to false input)')
+
+    @property
+    def mileage(self):
+        return self.__mileage
+    @mileage.setter
+    def mileage(self, argument):
+        if(isinstance(argument, int) and argument >= 0):
+            self.__mileage = argument
