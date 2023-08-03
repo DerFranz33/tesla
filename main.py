@@ -1,6 +1,6 @@
 from tesla import Tesla
 
-def tests_tesla():
+def tests_tesla_type_init():
     t = Tesla('y')
     assert(t.type == 3)
     t.type = 'x'
@@ -8,4 +8,4 @@ def tests_tesla():
     t.type = 'X'
     assert(t.type == 'X')
 
-tests_tesla()
+tests_tesla_type_init()
