@@ -1,5 +1,5 @@
 class Tesla:
-    def __init__(self, type=3):
+    def __init__(self, type):
         self.__type = 3
         self.type = type
         
@@ -13,4 +13,4 @@ class Tesla:
         if(argument in CONSTRAIN_TYPE):
             self.__type = argument
         else:
-            (type == 3)
+            print('Tesla model 3 created (due to false input)')
