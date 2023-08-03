@@ -1,3 +1,5 @@
+# from decimal import Decimal
+from random import randrange
 class Tesla:
     def __init__(self, type, colour):
         self.__type = 3
@@ -5,8 +7,21 @@ class Tesla:
         self.__colour = 'Solid Black'
         self.colour = colour
         self.__mileage = 0
+        self.__panel = self._panel_is_broken(self.colour)
         
 
+
+    def _panel_is_broken(self, colour):
+        c = len(colour)
+        chance_percentage = round((c * 0.001 * 100), 2)
+        if(randrange(0, 100) <= chance_percentage): #TODO wanky
+            return True
+        return False
+
+
+
+
+#-----------------------------------PROPERTIES-------------------------------------
     @property
     def type(self):
         return self.__type
@@ -36,3 +51,4 @@ class Tesla:
     def mileage(self, argument):
         if(isinstance(argument, int) and argument >= 0):
             self.__mileage = argument
+# -----------------------------------END PROPERTIES-----------------------------------------

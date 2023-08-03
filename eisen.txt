@@ -1,10 +1,9 @@
 KLASSE: Tesla
     ATTRIBUTEN:
         type --> constrain can only be S, X, 3 or Y
-
         color --> constrain can only be Deep Blue, Midnight Silver, Pearl White, Red, Solid Black
-Black
         mileage
+        
         panel
         batterypack
     DEFs:
