@@ -1,6 +1,6 @@
 KLASSE: Tesla
     ATTRIBUTEN:
-        type
+        type --> constrain can only be S, X, 3 or Y
         color
         mileage
         panel
