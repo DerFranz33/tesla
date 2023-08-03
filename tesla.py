@@ -1,4 +1,3 @@
-# from decimal import Decimal
 from random import randrange
 class Tesla:
     def __init__(self, type, colour):
