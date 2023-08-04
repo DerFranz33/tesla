@@ -7,7 +7,7 @@ class Tesla:
         self.__colour = 'Solid Black'
         self.colour = colour
         self.__mileage = 0
-        self.__panel = self._panel_is_broken(self.colour)
+        self._panel_broken = self._panel_is_broken(self.colour)
         self._battery = Batterypack(100)
         
 
@@ -19,8 +19,16 @@ class Tesla:
             return True
         return False
 
+
     def _charge(self):
        self._battery.charge()
+
+
+    def _can_drive(self):
+        if(self._panel_broken == True):
+            return False
+        if(self._panel_broken == False):
+            return True
 
 
 #-----------------------------------PROPERTIES-------------------------------------

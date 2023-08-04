@@ -22,6 +22,11 @@ def tests_tesla():
     current_status = t._battery.status
     t._charge()
     assert(t._battery.status > current_status)
+    # can_drive()
+    t._panel_broken = True
+    assert(t._can_drive() == False)
+    t._panel_broken = False
+    assert(t._can_drive() == True)
 
 def tests_batterypack():
     # kwh
