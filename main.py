@@ -36,6 +36,7 @@ def tests_batterypack():
     for times in range(10020):
         b.charge()
     assert(b.n_charged == 10000)
+    # battery spend effects
     current_status = b.status
     b.charge()
     assert(b.status == current_status)
