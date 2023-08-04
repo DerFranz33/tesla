@@ -27,8 +27,6 @@ def tests_batterypack():
     assert(b.kwh == 85)
     # status
     assert(b.status == 25)
-    b.status = 40
-    assert(b.status == 25)
     # charge()
     assert(b.n_charged == 0)
     b.charge()
@@ -38,6 +36,9 @@ def tests_batterypack():
     for times in range(10020):
         b.charge()
     assert(b.n_charged == 10000)
+    current_status = b.status
+    b.charge()
+    assert(b.status == current_status)
     
 
 tests_tesla()

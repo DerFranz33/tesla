@@ -1,14 +1,16 @@
 from random import randrange
 class Batterypack:
+    
     def __init__(self, kwh, status=25) :
         self.kwh = kwh
         self.__status = status
         self.__n_charged = 0 # TODO
+        self._battery_spend = False
     
 
     def charge(self):
        charge_load = randrange(20, self.kwh)
-       self.__status += charge_load
+       self.status += charge_load
        self.n_charged += 1
 
 
@@ -29,7 +31,10 @@ class Batterypack:
         return self.__status
     @status.setter
     def status(self, argument):
-        print('Not allowed to alter battery. Battery status remains {}'.format(self.kwh))
+        if(self._battery_spend == False):
+            self.__status = argument
+        else:
+            print('impossible to change status... battery is spend!')
 
     
     @property
@@ -39,3 +44,6 @@ class Batterypack:
     def n_charged(self, argument):
         if(self.n_charged + 1 <= 10000):
             self.__n_charged = argument
+        else:
+            self._battery_spend = True
+            print('battery is used {} times... battery is spend!'.format(self.n_charged))
