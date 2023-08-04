@@ -30,8 +30,9 @@ def tests_tesla():
     # print __str__
     print(t)
     # drive()
-    # t.drive(1) 
-    # assert(t._battery.status == 99.12)
+    t1 = Tesla('y', 'kebab') 
+    t1.drive(1)
+    assert(t1._battery.status == 15)
 
 def tests_batterypack():
     # kwh
