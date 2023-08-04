@@ -9,6 +9,7 @@ class Batterypack:
     def charge(self):
        charge_load = randrange(20, self.kwh)
        self.__status += charge_load
+       self.__n_charged += 1
 
 
     @property
@@ -29,3 +30,11 @@ class Batterypack:
     @status.setter
     def status(self, argument):
         print('Not allowed to alter battery. Battery status remains {}'.format(self.kwh))
+
+    
+    @property
+    def n_charged(self):
+        return self.__n_charged
+    @n_charged.setter
+    def n_charged(self, argument):
+        print('not allowed to change value. n_charged remains {}'.format(self.n_charged))

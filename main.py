@@ -30,8 +30,10 @@ def tests_batterypack():
     b.status = 40
     assert(b.status == 25)
     # charge()
+    assert(b.n_charged == 0)
     b.charge()
     assert(b.status > 25)
+    assert(b.n_charged == 1)
     
 
 tests_tesla()
