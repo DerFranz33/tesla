@@ -36,14 +36,14 @@ class Batterypack:
     @status.setter
     def status(self, argument):
         if(self._battery_spend == False): #and argument >= self.__status):
-            if(self.__status + argument <= self.kwh and self.__status + argument >= 0):
-                self.__status = argument
-            elif(self.__status + argument < 0):
+            self.__status = argument
+            if(self.__status <= self.kwh and self.__status >= 0):
+                pass
+            elif(self.__status < 0):
                 self.__status = 0
                 self._battery_spend = True
-            elif(self.__status + argument > self.kwh):
+            elif(self.__status > self.kwh):
                 self.__status = self.kwh
-
         else:
             print('impossible to change status... battery is spend!')
 
