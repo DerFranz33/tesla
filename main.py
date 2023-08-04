@@ -34,6 +34,10 @@ def tests_batterypack():
     b.charge()
     assert(b.status > 25)
     assert(b.n_charged == 1)
+    # n_charged
+    for times in range(10020):
+        b.charge()
+    assert(b.n_charged == 10000)
     
 
 tests_tesla()
