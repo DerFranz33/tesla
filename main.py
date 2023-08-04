@@ -29,6 +29,9 @@ def tests_tesla():
     assert(t._can_drive() == True)
     # print __str__
     print(t)
+    # drive()
+    # t.drive(1) 
+    # assert(t._battery.status == 99.12)
 
 def tests_batterypack():
     # kwh

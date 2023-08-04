@@ -17,6 +17,19 @@ class Tesla:
 
 
 
+
+    def drive(self,miles):
+        if(isinstance(miles, int) and self._panel_broken == False):
+             for mile in range(miles):
+              kwh_charge_used = (ord(self.type)/100)*1
+              current_battery_status = self._battery.status
+              if(current_battery_status - kwh_charge_used >= 0):
+                # self._battery.juice(kwh_charge_used)
+                self._battery.juice(10)
+
+
+
+
     def _panel_is_broken(self, colour):
         c = len(colour)
         chance_percentage = round((c * 0.001 * 100), 2)
