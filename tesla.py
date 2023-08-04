@@ -11,6 +11,11 @@ class Tesla:
         self._battery = Batterypack(100)
         
 
+    def __str__(self):
+        return('Tesla van het type: {} -- met colour: {} -- en mileage: {} -- en is panel broken?: {} -- en battery status: {} -- en battery kwh: {}'
+              .format(self.type, self.colour, self.mileage, self._panel_broken, self._battery.status, self._battery.kwh))
+
+
 
     def _panel_is_broken(self, colour):
         c = len(colour)

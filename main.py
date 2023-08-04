@@ -27,6 +27,8 @@ def tests_tesla():
     assert(t._can_drive() == False)
     t._panel_broken = False
     assert(t._can_drive() == True)
+    # print __str__
+    print(t)
 
 def tests_batterypack():
     # kwh
