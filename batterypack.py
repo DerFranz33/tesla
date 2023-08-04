@@ -1,8 +1,15 @@
+from random import randrange
 class Batterypack:
     def __init__(self, kwh, status=25) :
         self.kwh = kwh
         self.__status = status
+        self.__n_charged = 0 # TODO
     
+
+    def charge(self):
+       charge_load = randrange(20, self.kwh)
+       self.__status += charge_load
+
 
     @property
     def kwh(self):
