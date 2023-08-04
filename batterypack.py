@@ -14,7 +14,7 @@ class Batterypack:
        self.n_charged += 1
 
     
-    def juice(kwh):
+    def juice(self, kwh):
         self.status -= kwh
 
 
@@ -35,11 +35,15 @@ class Batterypack:
         return self.__status
     @status.setter
     def status(self, argument):
-        if(self._battery_spend == False and argument >= self.__status):
-            if(self.__status + argument <= self.kwh):
+        if(self._battery_spend == False): #and argument >= self.__status):
+            if(self.__status + argument <= self.kwh and self.__status + argument >= 0):
                 self.__status = argument
-            else:
+            elif(self.__status + argument < 0):
+                self.__status = 0
+                self._battery_spend = True
+            elif(self.__status + argument > self.kwh):
                 self.__status = self.kwh
+
         else:
             print('impossible to change status... battery is spend!')
 

@@ -40,11 +40,25 @@ def tests_batterypack():
     current_status = b.status
     b.charge()
     assert(b.status == current_status)
+    assert(b._battery_spend == True)
     # at this point, status could not have been charged more than its max kwh
     current_kwh = b.kwh
     assert(b.status <= b.kwh)
     # juice()
-    
+    b2 = Batterypack(100)
+    assert(b2.kwh == 100)
+    assert(b2.status == 25)
+    assert(b2._battery_spend == False)
+    b2.charge()
+    current_status = b2.status
+    assert(b2._battery_spend == False)
+    assert(b2.status <= b2.kwh)
+    b2.juice(current_status)
+    assert(b2.status == 0)
+    assert(b2._battery_spend == False)
+    b2.juice(1)
+    assert(b2._battery_spend == True)
+    assert(b2.status == 0)
     
 
     
