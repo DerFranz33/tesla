@@ -40,6 +40,13 @@ def tests_batterypack():
     current_status = b.status
     b.charge()
     assert(b.status == current_status)
+    # at this point, status could not have been charged more than its max kwh
+    current_kwh = b.kwh
+    assert(b.status <= b.kwh)
+    # juice()
+    
+    
+
     
 
 tests_tesla()
