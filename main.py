@@ -18,6 +18,10 @@ def tests_tesla():
     assert(t.mileage == 0)
     t.mileage = 1000
     assert(t.mileage == 1000)
+    # charge()
+    current_status = t._battery.status
+    t._charge()
+    assert(t._battery.status > current_status)
 
 def tests_batterypack():
     # kwh

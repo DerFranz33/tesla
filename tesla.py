@@ -1,4 +1,5 @@
 from random import randrange
+from batterypack import Batterypack
 class Tesla:
     def __init__(self, type, colour):
         self.__type = 3
@@ -7,6 +8,7 @@ class Tesla:
         self.colour = colour
         self.__mileage = 0
         self.__panel = self._panel_is_broken(self.colour)
+        self._battery = Batterypack(100)
         
 
 
@@ -17,7 +19,8 @@ class Tesla:
             return True
         return False
 
-
+    def _charge(self):
+       self._battery.charge()
 
 
 #-----------------------------------PROPERTIES-------------------------------------
